@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p ="http://primefaces.org/ui">
+      xmlns:p ="http://primefaces.org/ui" >
 <h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <title>الوسائل المشتركة</title>
@@ -56,7 +56,7 @@
          <f:selectItem itemLabel="الاضاءة" itemValue="الاضاءة"></f:selectItem>
          <f:selectItem itemLabel="اخرى" itemValue="اخرى"></f:selectItem>
   </p:selectOneMenu><p:outputLabel value="الفحص الفني"></p:outputLabel>
-<p:selectOneRadio>
+<p:selectOneRadio value="#{mBvehicule.v.scan_vehicule}">
 <f:selectItem itemLabel="نعم" itemValue="نعم"></f:selectItem>
  <f:selectItem itemLabel="لا" itemValue="لا"></f:selectItem>
 </p:selectOneRadio>
