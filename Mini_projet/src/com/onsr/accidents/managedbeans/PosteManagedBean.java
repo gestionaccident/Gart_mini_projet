@@ -38,7 +38,7 @@ public void setListe(List<Poste> liste) {
 	this.liste = liste;
 }
 	public void insert()
-	{System.out.println("hello") ;
+	{System.out.println("hello managed bean") ;
 		if (ap.insert(p) != 0)
 		{
 			FacesMessage msg =new FacesMessage(FacesMessage.SEVERITY_INFO,"ajout","Ajout Effectué");

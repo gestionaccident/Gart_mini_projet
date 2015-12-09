@@ -11,6 +11,7 @@ import java.util.Date;
  */
 @Entity
 @NamedQuery(name="Accident.findAll", query="SELECT a FROM Accident a")
+
 public class Accident implements Serializable {
 	private static final long serialVersionUID = 1L;
 

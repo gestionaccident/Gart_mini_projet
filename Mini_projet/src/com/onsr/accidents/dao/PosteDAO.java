@@ -27,12 +27,14 @@ public class PosteDAO implements Serializable {
 	Statement stm ;
 	
 	public int insert(Poste p)
-	{  System.out.println("hello") ;
+	{  System.out.println("hello DAO") ;
 	 int x = 0 ;
 		try {
 			stm = c.Connection() ;
-			String req="insert into poste (ville,cite,province,nbreEmp,presPoste,date) values ('"+p.getVille()+"','"+p.getCite()+"','"+p.getProvince()+"',"+p.getNbremp()+",'"+p.getPrespos()+"','"+p.getDate()+"')" ;
+			System.out.println("connexion réussi"+p.getCodep()) ;
+			String req="insert into poste values ("+p.getCodep()+",'"+p.getVille()+"','"+p.getCite()+"','"+p.getProvince()+"',"+p.getNbremp()+",'"+p.getPrespos()+"','"+p.getDate()+"');" ;
 			x=stm.executeUpdate(req) ;
+			
 			System.out.println("execution du requete") ;
 			
 		}catch (Exception e)

@@ -17,6 +17,9 @@ xmlns:p="http://primefaces.org/ui">
 <h:form id ="ajout" align="right">
 <h:panelGrid title="formulaire our l'ajout d'un poste" cellpadding="10" columns="4">
 
+<p:inputText  value="#{MbPoste.p.codep}"></p:inputText>
+<p:outputLabel value="رقم المركز"></p:outputLabel>
+
 <p:inputText  title="ville ou se trouve le poste" value="#{MbPoste.p.ville}"></p:inputText>
 <p:outputLabel value="مدينة المركز"></p:outputLabel>
 
@@ -31,9 +34,10 @@ xmlns:p="http://primefaces.org/ui">
 
 <p:inputText title="Nom et prenom du responsable du poste" value="#{MbPoste.p.prespos}"></p:inputText>
 <p:outputLabel value="اسم و لقب رئيس المركز "></p:outputLabel>
+<p:calendar  value="#{MbPoste.p.date}" navigator="true" effect="fold"  >
 
-<p:inputText title="date de creation du poste" value="#{MbPoste.p.date}"></p:inputText>
-<p:outputLabel value="تاريخ صنغ المركز "></p:outputLabel>
+</p:calendar>
+<p:outputLabel value="تاريخ تنشأة المركز "></p:outputLabel>
 
 
   <p:commandButton title="en cliquant 'ajouter' ce poste va être ajouter dans la base de données" value="اضافة" action="#{MbPoste.insert}">
