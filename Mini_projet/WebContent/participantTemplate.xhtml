@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:p="http://primefaces.org/ui"
+      >
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>إرشادات عن الأطراف المشاركة</title>
+</h:head>
+<body>
+<h:form>
+<p:panel header="إرشادات عن الأطراف المشاركة" >
+ 
+
+
+  <h:panelGrid columns="4" cellpadding="10" >
+        
+          <p:selectOneListbox  value="#{mbp.part.individu}"  >
+            <f:selectItem itemLabel="سائق" itemValue="سائق"   />
+            <f:selectItem itemLabel="مرافق" itemValue="مرافق" />
+            <f:selectItem itemLabel="مترجل" itemValue="مترجل" />
+        </p:selectOneListbox>
+ <h:outputText value="الطرف "  />  
+       
+      
+  
+ 
+ 
+        
+          <p:selectOneListbox  value="#{mbp.part.situation}" >
+            <f:selectItem itemLabel="جريح بسيط" itemValue="جريح بسيط"  />
+            <f:selectItem itemLabel="  جريح خطي" itemValue="  جريح خطير" />
+            <f:selectItem itemLabel=" قتيل" itemValue=" قتيل" />
+        </p:selectOneListbox>
+ <h:outputText value="الحالة " />
+       
+      
+     
+      
+        
+          <p:selectOneListbox  value="#{mbp.part.sexe}"  >
+            <f:selectItem itemLabel="ذكر" itemValue="ذكر"  />
+            <f:selectItem itemLabel="  أنثى" itemValue="  أنثى" />
+          
+        </p:selectOneListbox>
+         <h:outputText value="الجنس "  />
+ 
+       
+      
+     
+    
+     
+ 
+  <p:inputText value="#{mbp.part.age}"  ></p:inputText>
+  
+   <p:outputLabel value="العمر"></p:outputLabel>
+ 
+    
+ 
+  
+       
+          <p:selectOneListbox  value="#{mbp.part.metier}" >
+           <f:selectItem itemLabel="موظف" itemValue="موظف"></f:selectItem>
+<f:selectItem itemLabel="تلميذ" itemValue="تلميذ"></f:selectItem>
+<f:selectItem itemLabel="طالب" itemValue="طالب"></f:selectItem>
+
+        </p:selectOneListbox>
+  <h:outputText value="المهنة"  />
+       
+     
+    
+   <p:inputText value="#{mbp.part.date_permis}"  ></p:inputText>
+   <p:outputLabel value="تاريخ رخصة السياقة"></p:outputLabel> 
+       
+ 
+   
+  
+     <p:outputLabel value="حزام الامان"></p:outputLabel>
+  <p:selectBooleanCheckbox  value="#{mbp.part.ceinture}" ></p:selectBooleanCheckbox>
+ 
+         
+       
+     
+ 
+    <p:selectBooleanCheckbox  value="#{mbp.part.casque}" ></p:selectBooleanCheckbox>
+  
+          <p:outputLabel value="حمل الخوذة"></p:outputLabel> 
+      
+  
+
+     
+   <p:inputText value="#{mbp.part.cause}"  ></p:inputText>
+   <p:outputLabel value="السبب"></p:outputLabel>
+   <br/><br/>
+   
+      
+       <br/>
+   </h:panelGrid>
+    <p:commandButton  value="تسجيل" action="#{mbp.inserer()}"></p:commandButton> 
+   </p:panel>
+ 
+ 
+  </h:form>
+</body>
+ 
+</html>
+

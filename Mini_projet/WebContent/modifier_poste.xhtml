@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p ="http://primefaces.org/ui" >
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+</h:head>
+<h:body>
+<f:view>
+
+<h:form id="liste">
+   <p:panel header="" style="font-size:16px">
+     <h:panelGrid columns="3" cellpadding="10">
+    
+  <p:dataTable var="art" id="dataTable" value="#{MbPoste.liste}" rowkey="#{art.codep}" >
+  <p:column>
+   <p:outputLabel value="اختر رقم المركز الذي تريد تغييره"></p:outputLabel>
+ </p:column>
+  <p:column headerText="رقم المركز">
+  <h:outputText value="#{art.codep}" />
+ </p:column>
+ <p:column headerText="المدينة">
+  <h:outputText value="#{art.ville}" />
+ </p:column>
+ <p:column headerText="الحي">
+  <h:outputText value="#{art.cite}" />
+ </p:column>
+ <p:column headerText="المعتمدية">
+  <h:outputText value="#{art.province}" />
+ </p:column>
+ <p:column headerText="عدد الاعوان">
+  <h:outputText value="#{art.nbremp}" />
+ </p:column>
+ <p:column headerText="اسم و لقب رئيس المركز">
+  <h:outputText value="#{art.prespos}" />
+ </p:column>
+ <p:column headerText=" تاريخ البدء ">
+  <h:outputText value="#{art.date}" />
+ </p:column>
+  <p:column style="width: 5%">
+       <p:commandButton update=":liste:mm" oncomplete="PF('modif').show()" icon="ui-icon ui-icon-pencil" >
+       		<f:setPropertyActionListener value="#{art}" target="#{MbPoste.p}" />
+ 		</p:commandButton>
+ </p:column>
+  </p:dataTable>
+  <p:dialog  header="تغيير مركز" widgetVar="modif" modal="true" resizable="true" >
+<p:outputPanel id="mm">
+<p:panelGrid columns="4" columnClasses="Label,value">
+<h:outputText value="رقم المركز" />
+<h:inputText value="#{MbPoste.p.codep}" />
+<h:outputText value="مدينة المركز" />
+<h:inputText value="#{MbPoste.p.ville}"></h:inputText>
+<h:outputText value="حي المركز" />
+<h:inputText value="#{MbPoste.p.cite}"></h:inputText>
+<h:outputText value="معتمدية المركز" />
+<h:inputText value="#{MbPoste.p.province}"></h:inputText>
+<h:outputText value="عدد موضفين المركز" />
+<h:inputText value="#{MbPoste.p.nbremp}"></h:inputText>
+<h:outputText value="اسم و لقب رئيس المركز" />
+<h:inputText value="#{MbPoste.p.prespos}"></h:inputText>
+<h:outputText value=" تاريخ البدء" />
+<h:inputText value="#{MbPoste.p.date}"></h:inputText>
+<p:commandButton value="Modifier" action="#{MbPoste.modif}" onclick="PF('modif').hide()" update=":liste:dataTable"></p:commandButton>
+</p:panelGrid>
+</p:outputPanel>
+</p:dialog>
+</h:panelGrid>
+</p:panel>
+</h:form>
+</f:view>
+</h:body>
+</html>

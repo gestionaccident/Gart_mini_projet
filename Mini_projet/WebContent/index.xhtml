@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en"
+ xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:p="http://primefaces.org/ui">
+  <head>
+    <meta charset="utf-8">
+     </meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+   
+    <title>المرصد الوطني للمرور</title>
+    <meta name="description" content="" ></meta>
+   
+    <meta name="author" content="templatemo"></meta>
+
+    <link rel="shortcut icon" href="./favicon.png" />		
+   
+    <link href="css/font-awesome.min.css" rel="stylesheet"/>
+   
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+   
+    <link href="css/templatemo_style.css" rel="stylesheet"/>
+   
+   <style>
+    
+    @font-face {
+    font-family: 'WebSymbolsRegular';
+    src: url('websymbols/websymbols-regular-webfont.eot');
+    src: url('websymbols/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('websymbols/websymbols-regular-webfont.woff') format('woff'),
+        url('websymbols/websymbols-regular-webfont.ttf') format('truetype'),
+        url('websymbols/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.ca-menu{
+    padding:0;
+    margin:0px auto;
+    width: 500px;
+}
+.ca-menu li{
+    width: 150px;
+    height: 110px;
+    overflow: hidden;
+    position: relative;
+    float:left;
+    background: #fff;
+    -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    -moz-box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    margin-right: 4px;
+    -webkit-transition: all 300ms linear;
+    -moz-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+    -ms-transition: all 300ms linear;
+    transition: all 300ms linear;
+}
+
+.ca-menu li a{
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: #333;
+    position: relative;
+}
+
+
+.ca-main{
+    font-size: 30px;
+    
+    text-align: center;
+    -webkit-transition: all 200ms linear;
+    -moz-transition: all 200ms linear;
+    -o-transition: all 200ms linear;
+    -ms-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+.ca-sub{
+    text-align:center;
+    font-size: 14px;
+    color: #666;
+    line-height: 40px;
+    opacity: 0.8;
+    position: absolute;
+    bottom: 0;
+    width: 100%; 
+    -webkit-transition: all 200ms linear;
+    -moz-transition: all 200ms linear;
+    -o-transition: all 200ms linear;
+    -ms-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+.ca-menu li:hover{
+    background-color: #000;
+}
+.ca-menu li:hover .ca-icon{
+    color: #ff2020;
+    -webkit-animation: moveFromBottom 300ms ease;
+    -moz-animation: moveFromBottom 300ms ease;
+    -ms-animation: moveFromBottom 300ms ease;
+}
+.ca-menu li:hover .ca-main{
+    color: #ff2020;
+    -webkit-animation: smallToBig 300ms ease;
+    -moz-animation: smallToBig 300ms ease;
+    -ms-animation: smallToBig 300ms ease;
+}
+.ca-menu li:hover .ca-sub{
+    color: #000;
+    background-color: #ff2020;
+    -webkit-animation: moveFromBottom 500ms ease;
+    -moz-animation: moveFromBottom 500ms ease;
+    -ms-animation: moveFromBottom 500ms ease;
+}
+@-webkit-keyframes smallToBig{
+    from {
+        -webkit-transform: scale(0.1);
+    }
+    to {
+        -webkit-transform: scale(1);
+    }
+}
+@-moz-keyframes smallToBig{
+    from {
+        -moz-transform: scale(0.1);
+    }
+    to {
+        -moz-transform: scale(1);
+    }
+}
+@-ms-keyframes smallToBig{
+    from {
+        -ms-transform: scale(0.1);
+    }
+    to {
+        -ms-transform: scale(1);
+    }
+}
+
+@-webkit-keyframes moveFromBottom {
+    from {
+        -webkit-transform: translateY(100%);
+    }
+    to {
+        -webkit-transform: translateY(0%);
+    }
+}
+@-moz-keyframes moveFromBottom {
+    from {
+        -moz-transform: translateY(100%);
+    }
+    to {
+        -moz-transform: translateY(0%);
+    }
+}
+@-ms-keyframes moveFromBottom {
+    from {
+        -ms-transform: translateY(100%);
+    }
+    to {
+        -ms-transform: translateY(0%);
+    }
+}
+    
+    
+    </style>
+    
+    </head>
+<body>
+<div class="banner" id="templatemo_banner_slide">
+    <ul>
+        <li class="templatemo_banner_slide_01">
+            <div class="slide_caption">
+                   </div>
+        </li>
+        <li class="templatemo_banner_slide_02">
+            <div class="slide_caption">
+                 </div>
+        </li>
+        <li class="templatemo_banner_slide_03">
+            <div class="slide_caption">
+                  </div>
+        </li>
+    </ul>
+</div>
+
+<div id="templatemo_mobile_menu">
+        <ul class="nav nav-pills nav-stacked">
+            <li><a href="#templatemo_banner_slide"><i class="glyphicon glyphicon-home"></i>  Home</a></li>
+            <li><a href="#templatemo_about"><i class="glyphicon glyphicon-briefcase"></i>  About</a></li>
+            <li><a href="#templatemo_events"><i class="glyphicon glyphicon-bullhorn"></i>  Events</a></li>
+            <li><a href="#templatemo_timeline"><i class="glyphicon glyphicon-calendar"></i> Timeline</a></li>
+            <li><a rel="nofollow" href="http://www.facebook.com/templatemo" class="external-link"><i class="glyphicon glyphicon-export"></i>  External</a></li>
+            <li><a href="#templatemo_contact"><i class="glyphicon glyphicon-phone-alt"></i>  Contact</a></li>
+        </ul>
+</div>
+<div class="container_wapper">
+    <div id="templatemo_banner_menu">
+        <div class="container-fluid">
+            <div class="col-xs-4 templatemo_logo">
+            	<a href="#"><img src="images/templatemo_logo.jpg" id="logo_img" alt="dragonfruit website template" title="Dragonfruit Template" />
+                	
+                </a>
+                	    </div>
+                	    
+                	    
+                	    
+                	    
+            <div class="col-sm-8 hidden-xs">
+                <ul class="nav nav-justified">
+                   
+                  
+                   
+                   
+                    <li><a rel="nofollow" href="" class="external-link">الإحصائيات</a></li>
+                    
+                     <li><a href="#templatemo_timeline">الأعوان</a></li>
+                     <li><a href="JsfAjout_poste.xhtml">المراكز 
+                     
+                     
+                     
+                     </a></li>
+                      <li><a href="#templatemo_about">الحوادث</a></li>
+                     <li><a href="#templatemo_banner_slide">الصفحة الرئيسية</a></li>
+                 </ul>
+            </div>
+            <div class="col-xs-8 visible-xs">
+                <a href="#" id="mobile_menu"><span class="glyphicon glyphicon-th-list"></span></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="templatemo_about" class="container_wapper">
+    <div class="container-fluid">
+   
+   
+       
+           <ul class="ca-menu">                 
+                   
+                    <li>
+                        <a href="#">
+                         
+                        <h:outputText value="إتعديل الحادث" class="ca-main"> </h:outputText>  
+                           
+                          
+                        </a>
+                    </li>
+					 <li>
+                        <a href=" Interface.xhtml">
+                            
+                           
+                                <h:outputText value="إضافة حادث " class="ca-main"> </h:outputText>  
+                               
+                           
+                        </a>
+                    </li>
+                </ul> 
+            </div><!-- content -->
+        </div>
+    
+             
+
+
+
+    
+
+
+<div id="templatemo_footer">
+    <div>
+        <p id="footer">ONSR</p>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.singlePageNav.min.js"></script>
+<script src="js/unslider.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+<script src="js/templatemo_script.js"></script>
+</body>
+</html>

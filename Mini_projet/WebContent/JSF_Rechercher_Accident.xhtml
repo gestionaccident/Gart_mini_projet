@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p ="http://primefaces.org/ui"
+      
+       dir="rtl"
+    >
+
+    <h:head>
+    <title>البحث عن  حادث</title>
+    </h:head>
+    <h:body>
+      
+
+        <h:form id="liste">
+            <p:dataTable id="dataTable" var="list_acc" value="#{managed_Bean_Accident.list_acc}" rowKey="#{list_acc.id}">
+                <f:facet name="header">
+                    <p:button value="البحث عن  حادث" style="background-color" />
+                </f:facet>
+
+                <p:columnGroup type="header">
+                    <p:row>
+                        <p:column rowspan="2" headerText="معرف"   filterBy="#{list_acc.id}"/>
+                        
+                        </p:row>
+                  
+     
+     
+                    
+                    
+                    <p:row>
+                    <p:column filterBy="#{list_acc.route}">  
+         <f:facet name="header">  
+             <h:outputText value="الطريق" />  
+         </f:facet>  
+            <h:outputText value="#{list_acc.route}" style="float:left" />  
+     </p:column>  
+     
+     
+     
+                    
+                    
+                        <p:column filterBy="#{list_acc.zone_geographique}">  
+         <f:facet name="header">  
+             <h:outputText value="االمنطقة الجغرافية" />  
+         </f:facet>  
+            <h:outputText value="#{list_acc.zone_geographique}" style="float:left" />  
+     </p:column>  
+     
+     
+     
+           
+           
+            <p:column filterBy="#{list_acc.num_mahdher}">  
+         <f:facet name="header">  
+             <h:outputText value="رقم المحضر" />  
+         </f:facet>  
+            <h:outputText value="#{list_acc.num_mahdher}" style="float:left" />  
+     </p:column>  
+                     
+             <p:column filterBy="#{list_acc.date_accident}">  
+         <f:facet name="header">  
+             <h:outputText value="تاريخ الحادث" />  
+         </f:facet>  
+            <h:outputText value="#{list_acc.date_accident}" style="float:left" />  
+     </p:column>            
+                     
+                   
+                    <p:column filterBy="#{list_acc.gouvernaurat}">  
+         <f:facet name="header">  
+             <h:outputText value="المنطقة" />  
+         </f:facet>  
+            <h:outputText value="#{list_acc.gouvernaurat}" style="float:left" />  
+     </p:column>    
+     
+     
+     
+                     
+                     <p:column filterBy="#{list_acc.ville}">  
+         <f:facet name="header">  
+             <h:outputText value="الولاية" />  
+         </f:facet>  
+            <h:outputText value="#{list_acc.ville}" style="float:left" />  
+     </p:column>  
+     
+     
+     
+      <p:column filterBy="#{list_acc.typeAccident}">  
+         <f:facet name="header">  
+             <h:outputText value="نوع الحادث" />  
+         </f:facet>  
+            <h:outputText value="#{list_acc.typeAccident}" style="float:left" />  
+     </p:column>  
+                  
+                  
+                  
+                        
+             <p:column filterBy="#{list_acc.nombreDeVictime}">  
+         <f:facet name="header">  
+             <h:outputText value="عدد الضحايا" />  
+         </f:facet>  
+            <h:outputText value="#{list_acc.nombreDeVictime}" style="float:left" />  
+     </p:column>  
+     
+                
+                        
+                       
+                        
+                        
+                         
+                       
+           
+                        
+                        
+                        
+                    </p:row>
+                </p:columnGroup>
+
+ <p:column>
+ 
+ 
+ 
+                    <h:outputText value="#{list_acc.id}" />
+                </p:column>
+ <p:column>
+                    <h:outputText value="#{list_acc.route}" />
+                </p:column>
+                <p:column>
+                    <h:outputText value="#{list_acc.zone_geographique}" />
+                </p:column>
+                
+                <p:column>
+                    <h:outputText value="#{list_acc.num_mahdher}" />
+                </p:column>
+                
+               <p:column>
+                    <h:outputText value="#{list_acc.date_accident}" />
+                </p:column>
+               
+              <p:column>
+                    <h:outputText value="#{list_acc.gouvernaurat}" />
+                </p:column>
+                
+                <p:column>
+                    <h:outputText value="#{list_acc.ville}" />
+                </p:column>
+                
+                
+                <p:column>
+                    <h:outputText value="#{list_acc.typeAccident}" />
+                </p:column>
+               
+               
+               <p:column>
+                    <h:outputText value="#{list_acc.nombreDeVictime}" />
+                </p:column>
+               
+               
+                
+                
+                
+                
+                
+                 
+               
+                
+                
+                
+                
+                
+            
+                   
+                
+
+            </p:dataTable>
+            
+       
+          
+        </h:form>
+
+    </h:body>
+</html>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:p ="http://primefaces.org/ui"
+ dir="rtl"
+>
+
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title> إضافة  طريق  </title>
+   
+</h:head>
+<h:body>
+<f:view>
+<h:form>
+<p:panel id="basic" header="المرصد الوطني للسلامة المرورية"  style="margin-bottom:1px">
+  
+<h1>  إرشادات عن الطريق  </h1><br></br>
+  
+    <h:panelGrid id="panel" columns="3" border="0" cellpadding="0" cellspacing="2"  style="text-align:center;">
+
+<p:column>
+
+
+
+  <u> <p:outputLabel  style="font-weight:bold">رقم الطريق  </p:outputLabel></u><br></br>
+   <p:inputText value="#{managedbeanroute.route.numeroRoute}"   title="numero de la route"  > </p:inputText><br></br>
+   
+
+<p:outputLabel  >نوع الطريق</p:outputLabel><br></br>
+<p:selectOneMenu id="type"  value="#{managedbeanroute.route.typeRoute}"  title="type de route">
+            <f:selectItem itemLabel="سيارة" itemValue="سيارة" />
+            <f:selectItem itemLabel="وطنية" itemValue="وطنية" />
+            <f:selectItem itemLabel="جهوية" itemValue="جهوية" />
+             <f:selectItem itemLabel="محلية" itemValue="محلية" />
+               <f:selectItem itemLabel="شارع" itemValue="شارع" />
+                 <f:selectItem itemLabel="نهج" itemValue="نهج" />
+                   <f:selectItem itemLabel="مسلك فلاحي" itemValue="مسلك فلاحي" />
+                     <f:selectItem itemLabel="زقاق" itemValue="زقاق" />
+                       <f:selectItem itemLabel="سريعة" itemValue="سريعة" /> 
+             </p:selectOneMenu><br></br>
+<p:outputLabel>حالة أخرى  لنوع  الطريق     </p:outputLabel><br></br>
+<p:inputText  value="#{managedbeanroute.route.autreType}"  title="autre type"> </p:inputText>
+<br></br>
+
+<p:selectOneRadio id="num" value="#{managedbeanroute.route.numerotés}" title="numeroté ou non">
+            <f:selectItem itemLabel="مرقمة" itemValue="true" />
+            <f:selectItem itemLabel="غير مرقمة" itemValue="false" />
+            
+        </p:selectOneRadio> <br></br> 
+
+
+
+
+
+
+
+<p:outputLabel> النقطة  الكيلومترية</p:outputLabel><br></br>
+<p:inputText value="#{managedbeanroute.route.pointKilometrge}"  title="لنقطة  الكيلومترية"> </p:inputText><br></br>
+
+<p:outputLabel>المنطقة البلدية</p:outputLabel><br></br>
+<p:inputText value="#{managedbeanroute.route.le_secteur_municipal}"   title="المنطقة البلدية"> </p:inputText><br></br>
+<p:outputLabel>الشارع أو النهج</p:outputLabel><br></br>
+<p:inputText  value="#{managedbeanroute.route.cheminRue}"  title="الشارع أو النهج"> </p:inputText><br></br>
+
+
+<p:outputLabel>نقطة دالة</p:outputLabel><br></br>
+<p:inputText value="#{managedbeanroute.route.pointDemonstr}"  title="نقطة دالة" > </p:inputText><br></br>
+
+<p:selectOneRadio id="omr" value="#{managedbeanroute.route.interEspaceOmran}">
+            <f:selectItem itemLabel="داخل مناطق العمران" itemValue="true" />
+            <f:selectItem itemLabel="خارج مناطق العمران" itemValue="false" />
+            
+        </p:selectOneRadio>   <br></br>
+
+             
+      
+      
+      
+            
+             
+             
+             <u><p:outputLabel style="font-weight:bold">اإشارات وعلامات الطريق</p:outputLabel><br></br></u>
+<p:selectOneMenu id="sig"  value="#{managedbeanroute.route.signeRoute}">
+            <f:selectItem itemLabel="ضوئية" itemValue="ضوئية" />
+            <f:selectItem itemLabel="عمودية" itemValue="عمودية" />
+            <f:selectItem itemLabel="سطحية" itemValue="سطحية" />
+            <f:selectItem itemLabel="غير موجودة" itemValue="غير موجودة" />
+</p:selectOneMenu><br></br>
+
+             
+             
+             
+        
+       
+
+
+
+<u><h:outputLabel style="font-weight:bold">نظام المرور</h:outputLabel></u><br></br>
+<p:selectOneMenu id="regle"  value="#{managedbeanroute.route.organisRoute}">
+            <f:selectItem itemLabel="اتجاه واحد" itemValue="اتجاه واحد" />
+            <f:selectItem itemLabel=" اتجاهان" itemValue=" اتجاهان" />
+            <f:selectItem itemLabel="اتجاهات منفصلة" itemValue="اتجاهات منفصلة" />
+      
+</p:selectOneMenu><br></br>
+
+        
+       
+<u><p:outputLabel style="font-weight:bold">سطح الطريق</p:outputLabel></u><br></br>
+<p:selectOneMenu id="sur"  value="#{managedbeanroute.route.surfaceRoute}">
+            <f:selectItem itemLabel="جاف" itemValue="جاف" />
+            <f:selectItem itemLabel="مبلل" itemValue="مبلل" />
+            <f:selectItem itemLabel="ثلجي" itemValue="ثلجي" />
+     
+</p:selectOneMenu><br></br><br></br>
+</p:column> 
+<p:column> 
+
+ 
+<u><p:outputLabel style="font-weight:bold">الإضاءة</p:outputLabel></u><br></br>
+<p:selectOneMenu id="lum"  value="#{managedbeanroute.route.éclairage}">
+            <f:selectItem itemLabel="نهارا " itemValue="نهارا " />
+            <f:selectItem itemLabel="ليلا مع وجود اضاءة بالطريق" itemValue="ليلا مع وجود اضاءة بالطريق" />
+            <f:selectItem itemLabel="ليلا  بدون اضاءة بالطريق" itemValue="ليلا  بدون اضاءة بالطريق" />
+      
+</p:selectOneMenu><br></br><br></br>
+
+
+<u><p:outputLabel style="font-weight:bold">خاصيات الطريق</p:outputLabel></u><br></br>
+
+<p:selectBooleanCheckbox  value="#{managedbeanroute.route.pavé}">معبدة</p:selectBooleanCheckbox><br></br>
+<p:selectBooleanCheckbox value="#{managedbeanroute.route.nonPavé}">غير معبدة</p:selectBooleanCheckbox><br></br>
+<p:selectBooleanCheckbox  value="#{managedbeanroute.route.etatMalRoute}">حالة الطريق سيئة</p:selectBooleanCheckbox><br></br>
+<p:selectBooleanCheckbox value="#{managedbeanroute.route.traveauxRoute}">طريق بها أشغال</p:selectBooleanCheckbox><br></br>
+
+
+
+
+
+<p:outputLabel  style="font-weight:bold">عرض المعبد بالمتر</p:outputLabel><br></br>
+<p:inputText  value="#{managedbeanroute.route.surfaceRouteMetre}" title="عرض المعبد بالمتر"> </p:inputText><br></br><br></br>
+ 
+
+
+<u><p:outputLabel style="font-weight:bold">وصف الطريق</p:outputLabel></u><br></br>
+<p:selectBooleanCheckbox value="#{managedbeanroute.route.zig}" >منعرج</p:selectBooleanCheckbox><br></br>
+<p:selectBooleanCheckbox value="#{managedbeanroute.route.droit}">مستقيم</p:selectBooleanCheckbox><br></br>
+<p:selectBooleanCheckbox  value="#{managedbeanroute.route.élevé}">مرتفع</p:selectBooleanCheckbox><br></br>
+<p:selectBooleanCheckbox value="#{managedbeanroute.route.pente}">منحدر</p:selectBooleanCheckbox><br></br>
+<p:selectBooleanCheckbox  value="#{managedbeanroute.route.devantEtabEduc}">أمام مؤسسة تربوية</p:selectBooleanCheckbox><br></br>
+<p:selectBooleanCheckbox value="#{managedbeanroute.route.devantEtabIndust}">منحدر أمام مؤسسة صناعية</p:selectBooleanCheckbox><br></br>
+<p:selectBooleanCheckbox  value="#{managedbeanroute.route.sousPont}">تحت جسر</p:selectBooleanCheckbox><br></br>
+<p:selectBooleanCheckbox  value="#{managedbeanroute.route.sousPont}">فوق جسر</p:selectBooleanCheckbox><br></br>
+<p:selectBooleanCheckbox value="#{managedbeanroute.route.intersecRailroad}">تقاطع طريق مع سكة حديدية</p:selectBooleanCheckbox><br></br>
+<p:selectBooleanCheckbox  value="#{managedbeanroute.route.intersecSansRailroad}">تقاطع طريق مع سكة حديدية غير</p:selectBooleanCheckbox><br></br><br></br>
+
+<u><p:outputLabel  style="font-weight:bold">العوامل الطبيعية</p:outputLabel></u><br></br>
+<p:selectBooleanCheckbox  value="#{managedbeanroute.route.tempsChaudDoux}" >طقس حار معتدل</p:selectBooleanCheckbox><br></br>
+<p:selectBooleanCheckbox value="#{managedbeanroute.route.rainy_Météo}">طقس ممطر</p:selectBooleanCheckbox><br></br>
+<p:selectBooleanCheckbox  value="#{managedbeanroute.route.brouillard}">وجود ضباب</p:selectBooleanCheckbox><br></br>
+<p:selectBooleanCheckbox value="#{managedbeanroute.route.vents}">وجود رياح</p:selectBooleanCheckbox><br></br>
+<p:selectBooleanCheckbox  value="#{managedbeanroute.route.neige}">تساقط ثلوج</p:selectBooleanCheckbox><br></br><br></br>
+
+
+</p:column> 
+
+<p:column>
+
+<h:graphicImage value="route.jpg" width="200" height="650" />
+
+</p:column>
+
+<p:commandButton value="تسجيل" action="#{managedbeanroute.Inserer}"></p:commandButton><br></br><br></br><br></br>
+</h:panelGrid>
+</p:panel>
+</h:form>
+
+</f:view>
+
+</h:body>
+</html>

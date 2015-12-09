@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p ="http://primefaces.org/ui"
+      
+       dir="rtl"
+    >
+
+    <h:head>
+    <title>Modifier Employes</title>
+    </h:head>
+    <h:body>
+      
+
+        <h:form id="liste">
+            <p:dataTable id="dataTable" var="employe" value="#{employeMB.employe}" rowKey="#{employe.id}">
+                <f:facet name="header">
+                    <p:button value="تعديل معلومات الموظف" style="background-color" />
+                </f:facet>
+
+                <p:columnGroup type="header">
+                    <p:row>
+                        <p:column rowspan="2" headerText="معرف" />
+                        
+                        
+                        
+                    </p:row>
+                  
+     
+     
+                    
+                    
+                    <p:row>
+                    <p:column filterBy="#{employe.cin}">  
+         <f:facet name="header">  
+             <h:outputText value="رقم بطاقة التغريف الوطنية" />  
+         </f:facet>  
+            <h:outputText value="#{employe.cin}" style="float:left" />  
+     </p:column>  
+     
+     
+     
+                    
+                    
+                        <p:column filterBy="#{employe.nom}">  
+         <f:facet name="header">  
+             <h:outputText value="الإسم" />  
+         </f:facet>  
+            <h:outputText value="#{employe.nom}" style="float:left" />  
+     </p:column>  
+     
+     
+     
+           
+           
+            <p:column filterBy="#{employe.prenom}">  
+         <f:facet name="header">  
+             <h:outputText value="اللقب" />  
+         </f:facet>  
+            <h:outputText value="#{employe.prenom}" style="float:left" />  
+     </p:column>  
+                     
+             <p:column filterBy="#{employe.sexe}">  
+         <f:facet name="header">  
+             <h:outputText value="جنس" />  
+         </f:facet>  
+            <h:outputText value="#{employe.cin}" style="float:left" />  
+     </p:column>            
+                     
+                   
+                    <p:column filterBy="#{employe.datenaiss}">  
+         <f:facet name="header">  
+             <h:outputText value="تاريخ الميلاد" />  
+         </f:facet>  
+            <h:outputText value="#{employe.datenaiss}" style="float:left" />  
+     </p:column>    
+     
+     
+     
+                     
+                     <p:column filterBy="#{employe.adresse}">  
+         <f:facet name="header">  
+             <h:outputText value="العنوان" />  
+         </f:facet>  
+            <h:outputText value="#{employe.adresse}" style="float:left" />  
+     </p:column>  
+     
+     
+     
+      <p:column filterBy="#{employe.grade}">  
+         <f:facet name="header">  
+             <h:outputText value="الرتبة" />  
+         </f:facet>  
+            <h:outputText value="#{employe.grade}" style="float:left" />  
+     </p:column>  
+                  
+                  
+                  
+                        
+             <p:column filterBy="#{employe.situationfam}">  
+         <f:facet name="header">  
+             <h:outputText value="الحالة العائلية" />  
+         </f:facet>  
+            <h:outputText value="#{employe.situationfam}" style="float:left" />  
+     </p:column>  
+     
+                
+                                               
+                        
+                        
+                         
+                       
+           <p:column width="20"/>   
+                  
+                        
+                        
+                        
+                    </p:row>
+                </p:columnGroup>
+
+ <p:column>
+ 
+ 
+ 
+                    <h:outputText value="#{employe.id}" />
+                </p:column>
+ <p:column>
+                    <h:outputText value="#{employe.cin}" />
+                </p:column>
+                <p:column>
+                    <h:outputText value="#{employe.nom}" />
+                </p:column>
+                
+                <p:column>
+                    <h:outputText value="#{employe.prenom}" />
+                </p:column>
+               
+               
+              <p:column>
+                    <h:outputText value="#{employe.sexe}" />
+                </p:column>
+                
+                
+                
+                
+                <p:column>
+                    <h:outputText value="#{employe.datenaiss}" />
+                </p:column>
+               
+               
+               <p:column>
+                    <h:outputText value="#{employe.adresse}" />
+                </p:column>
+               
+               <p:column>
+                    <h:outputText value="#{employe.grade}" />
+                </p:column>
+                
+                
+                <p:column>
+                    <h:outputText value="#{employe.situationfam}" />
+                </p:column>
+                
+                
+                
+                 
+               
+                
+                
+                
+                
+                
+            
+                   <p:column >
+                    <p:commandButton  icon="ui-icon-pencil"  update=":liste:Y"  oncomplete ="PF('modif').show()" >
+                    <f:setPropertyActionListener value ="#{employe}" target ="#{employeMB.aff}" />
+                    
+                    </p:commandButton>
+                    
+                </p:column>
+                
+
+            </p:dataTable>
+            
+       
+            <p:dialog        header=" Modifier un employeicle" widgetVar="modif"   resizable="true"   style="font-size:14px">
+   <p:outputPanel    id="Y">     
+<p:panelGrid    columns="2"  columnClasses="label,value">
+<h:outputText  value="معرف"></h:outputText>
+<h:inputText  value="#{employeMB.aff.id}"></h:inputText>
+<h:outputText  value="الاسم"></h:outputText>
+<h:inputText  value="#{employeMB.aff.nom}"></h:inputText>
+
+<h:outputText  value="اللقب"></h:outputText>
+<h:inputText  value="#{employeMB.aff.prenom}"></h:inputText>
+<h:outputText  value="جنس"></h:outputText>
+<h:inputText  value="#{employeMB.aff.sexe}"></h:inputText>
+
+
+<h:outputText  value="تاريخ الميلاد"></h:outputText>
+<h:inputText  value="#{employeMB.aff.datenaiss}"></h:inputText>
+
+<h:outputText  value="الرتبة"></h:outputText>
+<h:inputText  value="#{employeMB.aff.grade}"></h:inputText>
+
+<h:outputText  value="حالة عائلية"></h:outputText>
+<h:inputText  value="#{employeMB.aff.situationfam}"></h:inputText>
+
+<h:outputText  value="العنوان"></h:outputText>
+<h:inputText  value="#{employeMB.aff.adresse}"></h:inputText>
+
+<p:commandButton  value="modifier"  action="#{employeMB.modif_emp}"  onclick="PF('employeDialog').hide()"  update=":liste:dataTable"></p:commandButton>
+
+
+
+
+
+
+
+
+</p:panelGrid>
+
+</p:outputPanel>
+
+
+</p:dialog>
+
+           
+
+        </h:form>
+
+    </h:body>
+</html>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html  xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:p="http://primefaces.org/ui">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"  />
+<title>Insert title here</title>
+</h:head>
+<h:body>
+<f:view style="float:right;" >
+
+<p:panel  header="اضافة عون" style="font-size:18px; font-weight:bold; float:right; ">
+
+<h:form id ="ajout" style="float:right;">
+<h:panelGrid title="formulaire our l'ajout d'un employe" cellpadding="5" columns="4" >
+
+<p:inputText  value="#{employeMB.em.prenom}"></p:inputText>
+<p:outputLabel value="الاسم "></p:outputLabel>
+
+<p:inputText   value="#{employeMB.em.cin}"></p:inputText>
+<p:outputLabel value="رقم بطاقة التغريف الوطنية  "></p:outputLabel>
+
+
+<p:selectOneMenu value="#{employeMB.em.sexe}" effect="fold" editable="true">
+<f:selectItem  itemLabel="أنثى" itemValue="أنثى"></f:selectItem>
+<f:selectItem  itemLabel="ذكر" itemValue="ذكر"></f:selectItem>
+</p:selectOneMenu>
+<p:outputLabel value="الجنس  "></p:outputLabel>
+
+<p:inputText   value="#{employeMB.em.nom}"></p:inputText>
+<p:outputLabel value="اللقب  "></p:outputLabel>
+
+<p:calendar  value="#{employeMB.em.datenaiss}" navigator="true" effect="fold"  >
+<f:convertDateTime pattern="dd/MM/yyyy" />
+</p:calendar>
+<p:outputLabel value="تاريخ الميلاد  "></p:outputLabel>
+
+<p:inputTextarea value="#{employeMB.em.adresse}" rows="5" cols="30"  maxlength="30" counterTemplate="{0} characters remaining." autoResize="false" />
+<p:outputLabel value="العنوان  "></p:outputLabel>
+
+<p:inputText   value="#{employeMB.em.grade}"></p:inputText>
+<p:outputLabel value="الرتبة  "></p:outputLabel>
+
+<p:selectOneMenu value="#{employeMB.em.situationfam}" effect="fold" editable="true">
+<f:selectItem  itemLabel="عازب" itemValue="عازب"></f:selectItem>
+<f:selectItem  itemLabel="متزوج" itemValue="متزوج"></f:selectItem>
+</p:selectOneMenu>
+<p:outputLabel value="حالة عائلية "></p:outputLabel>
+
+<p:commandButton value="اضافة" action="#{employeMB.insert}"></p:commandButton>
+</h:panelGrid>
+</h:form>
+
+</p:panel>
+
+</f:view>
+</h:body>
+</html>
