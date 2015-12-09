@@ -26,7 +26,7 @@ xmlns:p ="http://primefaces.org/ui"
 
 
   <u> <p:outputLabel  style="font-weight:bold"  required="true">رقم الطريق  </p:outputLabel></u><br></br>
-   <p:inputText value="#{managedbeanroute.route.numeroRoute}"   title="numero de la route"  > </p:inputText><br></br>
+   <p:inputText value="#{managedbeanroute.route.numeroRoute}"   title="رقم الطريق  وهو رقم معرف لكل طريق"  > </p:inputText><br></br>
    
 
 <p:outputLabel  >نوع الطريق</p:outputLabel><br></br>
@@ -42,7 +42,7 @@ xmlns:p ="http://primefaces.org/ui"
                        <f:selectItem itemLabel="سريعة" itemValue="سريعة" /> 
              </p:selectOneMenu><br></br>
 <p:outputLabel>حالة أخرى  لنوع  الطريق     </p:outputLabel><br></br>
-<p:inputText  value="#{managedbeanroute.route.autreType}"  title="autre type"> </p:inputText>
+<p:inputText  value="#{managedbeanroute.route.autreType}"  title="إذا لم تجد نوع الطريق في القائمة  يمكنك اظافة نوع آخر"> </p:inputText>
 <br></br>
 
 <p:selectOneRadio id="num" value="#{managedbeanroute.route.numerotés}" title="numeroté ou non">
