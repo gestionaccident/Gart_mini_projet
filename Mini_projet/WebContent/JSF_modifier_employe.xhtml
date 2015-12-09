@@ -24,17 +24,11 @@
 
                 <p:columnGroup type="header">
                     <p:row>
-                        <p:column rowspan="2" headerText="معرف" />
+                        <p:column rowspan="2" headerText="معرف"  filterBy="#{employe.id}" />
                         
-                        
-                        
-                    </p:row>
+                   </p:row>
                   
-     
-     
-                    
-                    
-                    <p:row>
+     <p:row>
                     <p:column filterBy="#{employe.cin}">  
          <f:facet name="header">  
              <h:outputText value="رقم بطاقة التغريف الوطنية" />  
@@ -123,10 +117,7 @@
                 </p:columnGroup>
 
  <p:column>
- 
- 
- 
-                    <h:outputText value="#{employe.id}" />
+ <h:outputText value="#{employe.id}" />
                 </p:column>
  <p:column>
                     <h:outputText value="#{employe.cin}" />
@@ -190,13 +181,26 @@
             <p:dialog        header=" Modifier un employeicle" widgetVar="modif"   resizable="true"   style="font-size:14px">
    <p:outputPanel    id="Y">     
 <p:panelGrid    columns="2"  columnClasses="label,value">
+
+
 <h:outputText  value="معرف"></h:outputText>
 <h:inputText  value="#{employeMB.aff.id}"></h:inputText>
+
+
+<h:outputText  value="cin"></h:outputText>
+<h:inputText  value="#{employeMB.aff.cin}"></h:inputText>
+
+
 <h:outputText  value="الاسم"></h:outputText>
 <h:inputText  value="#{employeMB.aff.nom}"></h:inputText>
 
 <h:outputText  value="اللقب"></h:outputText>
 <h:inputText  value="#{employeMB.aff.prenom}"></h:inputText>
+
+
+
+
+
 <h:outputText  value="جنس"></h:outputText>
 <h:inputText  value="#{employeMB.aff.sexe}"></h:inputText>
 
@@ -204,14 +208,20 @@
 <h:outputText  value="تاريخ الميلاد"></h:outputText>
 <h:inputText  value="#{employeMB.aff.datenaiss}"></h:inputText>
 
+
+
 <h:outputText  value="الرتبة"></h:outputText>
 <h:inputText  value="#{employeMB.aff.grade}"></h:inputText>
+
 
 <h:outputText  value="حالة عائلية"></h:outputText>
 <h:inputText  value="#{employeMB.aff.situationfam}"></h:inputText>
 
 <h:outputText  value="العنوان"></h:outputText>
 <h:inputText  value="#{employeMB.aff.adresse}"></h:inputText>
+
+
+
 
 <p:commandButton  value="modifier"  action="#{employeMB.modif_emp}"  onclick="PF('employeDialog').hide()"  update=":liste:dataTable"></p:commandButton>
 
@@ -232,6 +242,6 @@
            
 
         </h:form>
-
+ <h:graphicImage value="employe.jpg" width="300" height="300"  align="center"/>
     </h:body>
 </html>

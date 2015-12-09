@@ -30,18 +30,24 @@ public void setRoute(Route route) {
 
 
 public String Inserer()
-{
+{RouteDAO routedao=new RouteDAO();
 	
+	if(routedao.inserer_route(route)==0)
+	{
 	
-	RouteDAO routedao=new RouteDAO();
-	routedao.inserer_route(route);
-	
-	
-	FacesMessage msg =new FacesMessage(FacesMessage.SEVERITY_INFO,"ajout","Ajout Effectué");
+	FacesMessage msg =new FacesMessage(FacesMessage.SEVERITY_INFO,"ajout","Ajout Non Effectué");
 	RequestContext.getCurrentInstance().showMessageInDialog(msg);
+	
+	}
+	
+	else
+	{
+		FacesMessage msg =new FacesMessage(FacesMessage.SEVERITY_INFO,"ajout","Ajout Effectué");
+		RequestContext.getCurrentInstance().showMessageInDialog(msg);
+		return null;
+		
+	}
 	return null;
-	
-	
 }
 
 

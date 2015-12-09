@@ -11,27 +11,30 @@ import com.onsr.accidents.business.Route;
 
 public class RouteDAO {
 	
-	
+	EntityTransaction tx;
 	public int inserer_route(Route route)
 	{
-		
+		int res=0;
+		try {
 		
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("Mini_projet");
 		EntityManager em = emf.createEntityManager();
 		
 	
-		EntityTransaction tx =  em.getTransaction();
+		tx =  em.getTransaction();
 		tx.begin();
 		 em.persist(route);
          tx.commit();
-      System.out.println("ajout cv");
-		em.close();
-		emf.close();
-		
-		
-		return 0;
-		
-		
+         res=1;
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+			tx.rollback();
+		}
+		return res;
 	}
+		
+		
+	
 
 }

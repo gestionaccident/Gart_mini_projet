@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+	<h:head>
+		<title>ajout  utilisateur</title>
+	</h:head>
+
+<h:body>
+<f:view >
+	<h:form id="ajout" >
+		<p:panel header="إضافة مستعمل" style="font-size:16px" >
+		<h:panelGrid columns="4" cellpadding="3">
+		<p:password id="pv" value="#{Gestion_utilisateur.util.mot_passe}"/><p:outputLabel value="كلمة السر"></p:outputLabel>
+				<p:inputText value="#{Gestion_utilisateur.util.cin}"></p:inputText><p:outputLabel value="رقم بطاقة تعريف"> 	</p:outputLabel>
+					<p:inputText value="#{Gestion_utilisateur.util.prenom}"/><p:outputLabel value="اللقب"></p:outputLabel>		
+					<p:inputText value="#{Gestion_utilisateur.util.nom}"/><p:outputLabel value="الاسم "></p:outputLabel>
+					
+					<p:commandButton value="تسجيل" action="#{Gestion_utilisateur.inserer}"></p:commandButton>
+				<p:selectOneMenu value="#{Gestion_utilisateur.util.grade}">
+						<f:selectItem itemLabel="عريف" itemValue="عريف"/>
+						<f:selectItem itemLabel="وكيل" itemValue=" وكيل"/>
+						<f:selectItem itemLabel="ملازم" itemValue="ملازم"/>
+					</p:selectOneMenu>
+					
+					<p:outputLabel value="الرتبة"></p:outputLabel>
+					
+			</h:panelGrid>
+		</p:panel>
+	</h:form>
+	</f:view>
+</h:body>
+</html>
