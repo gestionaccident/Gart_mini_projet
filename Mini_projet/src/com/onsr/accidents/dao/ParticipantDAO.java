@@ -14,16 +14,13 @@ public class ParticipantDAO implements Serializable  {
 		Connexion cnx = new Connexion() ;
 		
 	
-	public int insert(Participant part) {
+	public int insert(Participant part)throws SQLException {
 		int a=0;
-		try {
+		
    st =cnx.Connection() ;
-a=st.executeUpdate("insert into participant  values("+part.getIndividu()+"'"+"'"+part.getSituation()+"'"+part.getSexe()+"'"+part.getAge()+"'"+part.getMetier()+"'"+part.getDate_permis()+"'"+part.getCeinture()+"'"+part.getCasque() +"'"+part.getCause()+")");
+a=st.executeUpdate("insert into participant  values('"+part.getIndividu()+"'"+"'"+part.getSituation()+"'"+part.getSexe()+"'"+part.getAge()+"'"+part.getMetier()+"'"+part.getDate_permis()+"'"+part.getCeinture()+"'"+part.getCasque() +"'"+part.getCause()+")");
         System.out.println("succes");
-		} catch (SQLException e) {
-			e.getStackTrace();
-			  
-		}
+		
 		return a;
 	}
 

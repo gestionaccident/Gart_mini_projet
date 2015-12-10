@@ -37,5 +37,10 @@
 		<managed-bean-class>com.onsr.accidents.managedbeans.MBvehicule</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>Gestion_utilisateur</managed-bean-name>
+		<managed-bean-class>com.onsr.accidents.managedbeans.Gestion_utilisateur</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
 
 </faces-config>
