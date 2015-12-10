@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 
 
+
 import java.sql.Statement;
 
 import javax.faces.application.FacesMessage;
@@ -18,54 +19,47 @@ import com.onsr.accidents.business.Participant;
  
 
 
-public class Mbpart implements Serializable  {
-	
-	
-	
-	 
-		    
-	 Participant part=new Participant();
-	Connexion cnx=new Connexion();
-	Statement st;
-	
-	
-	
-	public void inserer(){		
-		
-		
-		
-		int x=0;
-		try {
-			x = st.executeUpdate("insert into participant  values("+part.getIndividu()+"'"+part.getSituation()+"'"+part.getSexe()+"'"+part.getAge()+"'"+part.getMetier()+"'"+part.getDate_permis()+"'"+part.getCeinture()+"'"+part.getCasque() +"'"+part.getCause()+")");
-		
-		
-		
-			if (x != 0)
-			{
-				FacesMessage msg =new FacesMessage(FacesMessage.SEVERITY_INFO,"ajout","oui");
-				RequestContext.getCurrentInstance().showMessageInDialog(msg);
-				 
-				
-			}else{
-				FacesMessage msg =new FacesMessage(FacesMessage.SEVERITY_WARN,"ajout","non");
-				RequestContext.getCurrentInstance().showMessageInDialog(msg); }
-			
-		}catch (Exception e)
-		{
-			e.getStackTrace() ;
-		}
-	}
-	
+public class Mbpart {
 	
 	
 
+	private int code;
+	public int getCode() {
+		return code;
+	}
+	public void setCode(int code) {
+		this.code = code;
+	}
 	
+	Participant part=new Participant();
 	public Participant getPart() {
 		return part;
 	}
-
 	public void setPart(Participant part) {
 		this.part = part;
 	}
 	
+	ParticipantDAO pt=new ParticipantDAO();
+	
+	
+	
+	public ParticipantDAO getPt() {
+		return pt;
+	}
+	public void setPt(ParticipantDAO pt) {
+		this.pt = pt;
+	}
+	public void insert()
+	{
+		if (pt.insert(part) != 0)
+		{
+			FacesMessage msg =new FacesMessage(FacesMessage.SEVERITY_INFO,"ajout","Ajout Effectué");
+			RequestContext.getCurrentInstance().showMessageInDialog(msg);
+			 
+			
+		}else{
+			FacesMessage msg =new FacesMessage(FacesMessage.SEVERITY_WARN,"ajout","Ajout Echoué");
+			RequestContext.getCurrentInstance().showMessageInDialog(msg); }
+		
+	}
 }
