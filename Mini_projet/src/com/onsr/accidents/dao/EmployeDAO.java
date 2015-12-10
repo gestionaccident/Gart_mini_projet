@@ -26,10 +26,12 @@ public class EmployeDAO implements Serializable{
 	{  
 	 int x = 0 ;
 		try {
-			System.out.println("res en cours") ;
+			
+			
 			stm = c.Connection() ;
-			System.out.println("1"+e.getDatenaiss().toString()) ;
-			String req="insert into employe (nom,prenom,cin,sexe,datenaiss,adresse,grade,situationfam) values ('"+e.getNom()+"','"+e.getPrenom()+"',"+e.getCin()+",'"+e.getSexe()+"',"+e.getDatenaiss()+",'"+e.getAdresse()+"','"+e.getGrade()+"','"+e.getSituationfam()+"')" ;
+			
+			System.out.println("cin"+e.getCin()+"-id"+e.getId()) ;
+			String req="insert into employe (nom,prenom,cin,sexe,datenaiss,adresse,grade,situationfam) values ('"+e.getNom()+"','"+e.getPrenom()+"',"+e.getCin()+",'"+e.getSexe()+"','"+e.getDatenaiss()+"','"+e.getAdresse()+"','"+e.getGrade()+"','"+e.getSituationfam()+"');" ;
 			x=stm.executeUpdate(req) ;
 			System.out.println("execution du requete") ;
 			

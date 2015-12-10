@@ -3,7 +3,7 @@ package com.onsr.accidents.business;
 
 
 public class Participant{
- 
+
 private   String individu;
 private String situation;
 private String sexe;
@@ -15,11 +15,22 @@ private String casque;
 private String cause;
 
 
+public Participant( String individu, String situation,
+		String sexe, int age, String metier,String date_permis,String ceinture,String casque,String cause) {
+	
+	
+	this.individu=individu;
+	this.situation=situation;
+	this.sexe=sexe;
+	this.age=age;
+	this.metier=metier;
+	this.date_permis=date_permis;
+	this.ceinture=ceinture;
+	this.casque=casque;
+	this.cause=cause;
+}
 
-
-
-
-
+public Participant(){}
 
 public String getSexe() {
 	return sexe;
@@ -75,6 +86,10 @@ public String getIndividu() {
 public void setIndividu(String individu) {
 	this.individu = individu;
 }
+
+
+
+
 
 
 

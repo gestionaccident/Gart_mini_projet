@@ -13,7 +13,7 @@ import com.onsr.accidents.dao.EmployeDAO;
 
 
 public class EmployeManagedBean {
-
+int x =0 ;
 Employe empl=new Employe();
 	
 	Employe aff=new Employe();
@@ -101,7 +101,9 @@ Employe empl=new Employe();
 
 
 	public void insert()
-	{   System.out.println("hello");
+	{   x++ ;
+		System.out.println("hello");
+	    
 		if (empdao.insert(em) != 0)
 		{
 			FacesMessage msg =new FacesMessage(FacesMessage.SEVERITY_INFO,"ajout","Ajout Effectué");
