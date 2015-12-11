@@ -10,9 +10,12 @@ public class Connexion {
 	private Statement Connexion;
 	
 	public Statement Connection()
-	{ String unicode= "?useUnicode=yes&characterEncoding=UTF-8";
+	{
 		
-		try {
+		
+		
+		String unicode= "?useUnicode=yes&characterEncoding=UTF-8";
+	try {
 			Class.forName("com.mysql.jdbc.Driver") ;
 			Connection cn= DriverManager.getConnection("jdbc:mysql://localhost:3306/gestion_des_accidents"+unicode, "root","") ;
 			Connexion = cn.createStatement() ;

@@ -24,14 +24,14 @@
 
                 <p:columnGroup type="header">
                     <p:row>
-                        <p:column rowspan="2" headerText="معرف"  filterBy="#{employe.id}" />
+                        <p:column rowspan="2" headerText="معرف"/>
                         
                    </p:row>
                   
      <p:row>
                     <p:column filterBy="#{employe.cin}">  
          <f:facet name="header">  
-             <h:outputText value="رقم بطاقة التغريف الوطنية" />  
+             <h:outputText value="رقم بطاقة التعريف الوطنية" />  
          </f:facet>  
             <h:outputText value="#{employe.cin}" style="float:left" />  
      </p:column>  
@@ -55,18 +55,18 @@
          <f:facet name="header">  
              <h:outputText value="اللقب" />  
          </f:facet>  
-            <h:outputText value="#{employe.prenom}" style="float:left" />  
+            <h:outputText value="#{employe.prenom}" style="float:left"  encoding="utf-8"/>  
      </p:column>  
                      
              <p:column filterBy="#{employe.sexe}">  
          <f:facet name="header">  
              <h:outputText value="جنس" />  
          </f:facet>  
-            <h:outputText value="#{employe.cin}" style="float:left" />  
+            <h:outputText value="#{employe.cin}" style="float:left"  encoding="utf-8"/>  
      </p:column>            
                      
                    
-                    <p:column filterBy="#{employe.datenaiss}">  
+                    <p:column>  
          <f:facet name="header">  
              <h:outputText value="تاريخ الميلاد" />  
          </f:facet>  
@@ -80,12 +80,12 @@
          <f:facet name="header">  
              <h:outputText value="العنوان" />  
          </f:facet>  
-            <h:outputText value="#{employe.adresse}" style="float:left" />  
+            <h:outputText value="#{employe.adresse}" style="float:left"  encoding="utf-8"/>  
      </p:column>  
      
      
      
-      <p:column filterBy="#{employe.grade}">  
+      <p:column>  
          <f:facet name="header">  
              <h:outputText value="الرتبة" />  
          </f:facet>  
@@ -95,7 +95,7 @@
                   
                   
                         
-             <p:column filterBy="#{employe.situationfam}">  
+             <p:column >  
          <f:facet name="header">  
              <h:outputText value="الحالة العائلية" />  
          </f:facet>  
@@ -187,7 +187,7 @@
 <h:inputText  value="#{employeMB.aff.id}"></h:inputText>
 
 
-<h:outputText  value="cin"></h:outputText>
+<h:outputText  value="رقم بطاقة التعريف الوطنية"></h:outputText>
 <h:inputText  value="#{employeMB.aff.cin}"></h:inputText>
 
 

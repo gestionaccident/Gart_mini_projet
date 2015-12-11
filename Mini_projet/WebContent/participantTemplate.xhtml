@@ -71,7 +71,7 @@
        
      
     
-   <p:inputText value="#{mbp.part.date_permis}"  ></p:inputText>
+   <p:inputText value="#{mbp.part.datePermis}"  ></p:inputText>
    <p:outputLabel value="تاريخ رخصة السياقة"></p:outputLabel> 
        
  
@@ -81,24 +81,18 @@
   <p:selectBooleanCheckbox  value="#{mbp.part.ceinture}" ></p:selectBooleanCheckbox>
  
          
-       
-     
- 
-    <p:selectBooleanCheckbox  value="#{mbp.part.casque}" ></p:selectBooleanCheckbox>
-  
-          <p:outputLabel value="حمل الخوذة"></p:outputLabel> 
-      
-  
+   <p:selectBooleanCheckbox value="#{mbp.part.casque}" >حمل الخوذة</p:selectBooleanCheckbox><br></br>
 
      
    <p:inputText value="#{mbp.part.cause}"  ></p:inputText>
    <p:outputLabel value="السبب"></p:outputLabel>
    <br/><br/>
-   
-      
-       <br/>
+  <br/>
    </h:panelGrid>
-    <p:commandButton  value="تسجيل" action="#{mbp.insert}"></p:commandButton> 
+  <p:commandButton value="تسجيل" action="#{mbp.insert}"></p:commandButton><br></br><br></br><br></br>
+    
+    
+    
    </p:panel>
  
  

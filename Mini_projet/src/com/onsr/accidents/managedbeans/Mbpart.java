@@ -1,8 +1,6 @@
 package com.onsr.accidents.managedbeans;
 
-import java.io.Serializable;
-import java.sql.SQLException;
-import java.sql.Statement;
+
 
 import javax.faces.application.FacesMessage;
 
@@ -43,25 +41,24 @@ public class Mbpart {
 		this.pt = pt;
 	}
 
-	public void insert() {
-		try {
-			if (pt.insert(part) != 0) {
-				FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "ajout", "Ajout Effectué");
+	public String insert() {
+		
+		
+		ParticipantDAO p=new ParticipantDAO();
+		p.insert(part);
+		System.out.println(part);
+                FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "ajout", "Ajout Effectué");
 				RequestContext.getCurrentInstance().showMessageInDialog(msg);
 
-			}
-			/*
-			 * else{ FacesMessage msg =new
-			 * FacesMessage(FacesMessage.SEVERITY_WARN,"ajout","Ajout Echoué");
-			 * RequestContext.getCurrentInstance().showMessageInDialog(msg); }
-			 */
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, "ajout",
-					"Ajout Echoué: " + e.getMessage());
-			RequestContext.getCurrentInstance().showMessageInDialog(msg);
-		}
+		return null;	
 
 	}
-}
+	
+	
+	public String ok() {
+		System.out.println("imen");
+		return null;
+	}
+	}
+		
+
