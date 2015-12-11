@@ -1,35 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
-	<h:head>
-		<title>ajout  utilisateur</title>
-	</h:head>
-
+      xmlns:p ="http://primefaces.org/ui" >
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>تغيير مستعمل</title>
+</h:head>
 <h:body>
-<f:view >
-	<h:form id="ajout" >
-		<p:panel header="تغيير مستعمل" style="font-size:16px" >
-		<h:panelGrid columns="4" cellpadding="3">
-		<p:password id="pv" value="#{Gestion_utilisateur.util.mot_passe}"/><p:outputLabel value="كلمة السر"></p:outputLabel>
-				<p:inputText value="#{Gestion_utilisateur.util.cin}"></p:inputText><p:outputLabel value="رقم بطاقة تعريف"> 	</p:outputLabel>
-					<p:inputText value="#{Gestion_utilisateur.util.prenom}"/><p:outputLabel value="اللقب"></p:outputLabel>		
-					<p:inputText value="#{Gestion_utilisateur.util.nom}"/><p:outputLabel value="الاسم "></p:outputLabel>
-					
-					<p:commandButton value="تغيير" action="#{Gestion_utilisateur.modif}"></p:commandButton>
-				<p:selectOneMenu value="#{Gestion_utilisateur.util.grade}">
-						<f:selectItem itemLabel="عريف" itemValue="arif"/>
-						<f:selectItem itemLabel="وكيل" itemValue=" wakil"/>
-						<f:selectItem itemLabel="ملازم" itemValue="molazem"/>
-					</p:selectOneMenu>
-					
-					<p:outputLabel value="الرتبة"></p:outputLabel>
-					
-			</h:panelGrid>
-		</p:panel>
-	</h:form>
-	</f:view>
+<f:view>
+
+<h:form id="liste">
+   <p:panel header="" style="font-size:16px">
+     <h:panelGrid columns="3" cellpadding="10">
+    
+  <p:dataTable var="art" id="dataTable" value="#{Gestion_utilisateur.getListe()}" rowkey="#{art.cin}" >
+  
+  <p:column headerText="رقم بطاقة">
+  <h:outputText value="#{art.cin}" />
+ </p:column>
+ <p:column headerText="رقم سر">
+  <h:outputText value="#{art.mot_passe}" />
+ </p:column>
+ <p:column headerText="الاسم">
+  <h:outputText value="#{art.nom}" />
+ </p:column>
+ <p:column headerText="اللقب">
+  <h:outputText value="#{art.prenom}" />
+ </p:column>
+ <p:column headerText="الرتبة">
+  <h:outputText value="#{art.grade}" />
+ </p:column>
+  <p:column style="width: 5%">
+       <p:commandButton update=":liste:mm" oncomplete="PF('modif').show()" icon="ui-icon ui-icon-pencil" >
+       		<f:setPropertyActionListener value="#{art}" target="#{Gestion_utilisateur.util}" />
+ 		</p:commandButton>
+ </p:column>
+  </p:dataTable>
+  <p:dialog  header="تغيير مستعمل " widgetVar="modif" modal="true" resizable="true" >
+<p:outputPanel id="mm">
+<p:panelGrid columns="4" columnClasses="Label,value">
+<h:outputText value="رقم بطاقة" />
+<h:inputText value="#{Gestion_utilisateur.util.cin}" />
+<h:outputText value="رقم سر" />
+<h:inputText value="#{Gestion_utilisateur.util.mot_passe}"></h:inputText>
+<h:outputText value="الاسم" />
+<h:inputText value="#{Gestion_utilisateur.util.nom}"></h:inputText>
+<h:outputText value="اللقب" />
+<h:inputText value="#{Gestion_utilisateur.util.prenom}"></h:inputText>
+<h:outputText value="الرتبة" />
+<h:inputText value="#{Gestion_utilisateur.util.grade}"></h:inputText>
+<p:commandButton value="Modifier" action="#{Gestion_utilisateur.modif}" onclick="PF('modif').hide()" update=":liste:dataTable"></p:commandButton>
+</p:panelGrid>
+</p:outputPanel>
+</p:dialog>
+</h:panelGrid>
+</p:panel>
+</h:form>
+</f:view>
 </h:body>
 </html>
